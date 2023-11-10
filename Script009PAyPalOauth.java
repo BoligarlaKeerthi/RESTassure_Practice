@@ -13,7 +13,7 @@ String  accessToken;
 	@Test(priority='1')
 	public void GetAccessToekn()
 	{
-String clientID = "Aab7fWwAzha1ogtaGAij9jPg8tTnTWwM9fWTS-RKB-znXb7j-j9x6359iSBxeHMcZ-2mLBpkNptQTW3x";
+String clientID = "Aab7fWwAzha1ogtaGAij9jPg8tTnTWwM9fWTS-RKB-znXb7j-j9x6359iSBxeHMcZ-2mLBpkNptQTW";
 String clinetsecret = "ED_HWsl5rWJMf9Wy5IjZHmF6kk9q7qRlDuIy_5SF0n-zADptbkRYTtUp-7ndIW5cdpvR0BsZ4eY90zad";
 
 
