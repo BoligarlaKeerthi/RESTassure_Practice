@@ -18,8 +18,7 @@ public void containsMethod() {
 			.get("/workspaces").
 		then()
 			.statusCode(200)
-			// matches all the items in the response and in strict order
-			// chnage order or remove one item.. method fails
+			
 			.body("workspaces.name", contains("My Workspace", "API Testing" 
 					));
 	}
@@ -34,8 +33,7 @@ public void containsMethod() {
 			.get("/workspaces").
 		then()
 			.statusCode(200)
-			// matches if the response in workspace.name is empty or not
-			// method will fail..as response is not empty
+			
 			.body("workspaces.name", empty());
 	}
 
@@ -50,8 +48,7 @@ public void containsMethod() {
 			.get("/workspaces").
 		then()
 			.statusCode(200)
-			// matches if the response in workspace.name is not empty
-			// method will pass..as response is not empty
+			
 			.body("workspaces.name", is(not(empty())));
 	}
 	
@@ -65,8 +62,7 @@ public void containsMethod() {
 			.get("/workspaces").
 		then()
 			.statusCode(200)
-			// matches if the response in workspace.name with the number of name values
-			// method will pass..as response 5 name values
+			
 			.body("workspaces.name", hasSize(5));
 	}
 	
@@ -81,8 +77,7 @@ public void containsMethod() {
 			.get("/workspaces").
 		then()
 			.statusCode(200)
-			// matches if the response in workspace.name starts with a string
-			// method will fail..as response names may not start with same name
+			
 			.body("workspaces.name", everyItem(startsWith("My")));
 	}
 
@@ -97,9 +92,7 @@ public void hasKeyMethod() {
 		.get("/workspaces").
 	then()
 		.statusCode(200)
-		// matches if the response in workspace has a key like id, name or type
-		// method will pass..as response does contain key as id
-		// you will check this with each workspace array
+		
 		.body("workspaces[0]", hasKey("id"));
 }
 @Test
@@ -112,9 +105,7 @@ public void hasvalueMethod() {
 		.get("/workspaces").
 	then()
 		.statusCode(200)
-		// matches if the response in workspace has a value like name value, idvalue, type value
-		// method will pass..as response does contain value for given name, id or type
-		// you will check this using workspace array
+		
 		.body("workspaces[0]", hasValue("personal"));
 }
 
@@ -128,9 +119,7 @@ public void hasKeyValueMethod() {
 		.get("/workspaces").
 	then()
 		.statusCode(200)
-		// matches if the response in workspace has a key and value like name value, idvalue, type value
-		// method will pass..as response does contain key and value for given name, id or type
-		// you will check this using workspace array
+		
 		.body("workspaces[0]", hasEntry("name", "My Workspace"));
 }
 
@@ -140,7 +129,7 @@ public void hasKeyValueMethod() {
 
 
 
-// .body("owner[0].login", allOf(startsWith("Sonal"), containsString("0409")));
+
 
 @Test
 public void AnyofMethod() {
@@ -152,9 +141,7 @@ public void AnyofMethod() {
 		.get("/workspaces").
 	then()
 		.statusCode(200)
-		// matches if the response in workspace has a key and value like name value, idvalue, type value
-		// method will pass..as response does contain key and value for given name, id or type
-		// you will check this using workspace array
+		
 		.body("workspaces.name", anyOf(startsWith("My"), containsString("Workspace")));
 }
 
